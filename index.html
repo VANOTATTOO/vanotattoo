@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -19,6 +20,7 @@ body {
     overflow-x: hidden;
 }
 
+/* ФОН */
 body::before {
     content: "";
     position: fixed;
@@ -29,8 +31,9 @@ body::before {
     z-index: -1;
 }
 
+/* HERO */
 .hero {
-    height: 100vh;
+    min-height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,26 +41,72 @@ body::before {
     text-align: center;
 }
 
-.hero h1 {
-    font-size: clamp(36px, 8vw, 90px);
-    letter-spacing: 6px;
+/* ЛОГО */
+.logo-img {
+    width: 120px;
+    margin-bottom: 5px;
+    opacity: 0.95;
 }
 
+/* ЗАГОЛОВОК */
+.hero h1 {
+    font-size: clamp(40px, 8vw, 90px);
+    letter-spacing: 6px;
+    font-weight: 900;
+}
+
+/* ПОДЗАГОЛОВОК */
 .hero p {
     margin-top: 5px;
+    opacity: 0.7;
 }
 
+/* КНОПКА */
+.btn {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* ABOUT */
+.about {
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.about h2 {
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.about p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* PORTFOLIO */
 .portfolio {
-    padding: 60px 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
 .portfolio h2 {
-    margin-bottom: 30px;
-    font-size: 28px;
+    margin-bottom: 25px;
     letter-spacing: 3px;
 }
 
+/* СЛАЙДЕР */
 .slider {
     display: flex;
     overflow-x: auto;
@@ -71,71 +120,105 @@ body::before {
     border-radius: 10px;
     scroll-snap-align: center;
     transition: 0.3s;
+    filter: grayscale(100%) brightness(0.8);
 }
 
 .slider img:hover {
     transform: scale(1.05);
+    filter: grayscale(0%) brightness(1);
 }
 
-.slider::-webkit-scrollbar {
-    height: 6px;
-}
-
-.slider::-webkit-scrollbar-thumb {
-    background: #444;
-}
-
+/* CONTACT */
 .contact {
-    padding: 60px 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
-.contact a {
-    color: #fff;
+.socials {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.socials a {
     text-decoration: none;
-    font-size: 18px;
-    opacity: 0.8;
+    color: white;
+    border: 1px solid #444;
+    padding: 8px 16px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.socials a:hover {
+    background: white;
+    color: black;
 }
 </style>
+
 </head>
 
 <body>
 
+<!-- HERO -->
+
 <section class="hero">
-     <img src="logo.png" class="logo-img">
+    <img src="logo.png" class="logo-img">
 
+```
+<h1>VANOTATTOO</h1>
+<p>Індивідуальні тату • Blackwork • Графіка</p>
 
-    <h1>VANOTATTOO</h1>
-    <p>Black & Grey • Custom Tattoo</p>
+<a href="#contact" class="btn">Записатися</a>
+```
+
 </section>
 
-    
+<!-- ABOUT -->
+
+<section class="about">
+    <h2>Про мене</h2>
+    <p>
+        Я тату-майстер з досвідом понад 4 роки. Працюю в стилях blackwork та графіка.
+        Створюю індивідуальні ескізи під кожного клієнта з увагою до деталей та композиції.
+    </p>
+</section>
+
+<!-- PORTFOLIO -->
 
 <section class="portfolio">
     <h2>PORTFOLIO</h2>
 
-    <div class="slider">
-        <img src="tattoo1.jpg">
-        <img src="tattoo2.jpg">
-        <img src="tattoo3.jpg">
-        <img src="tattoo4.jpg">
-        <img src="tattoo5.jpg">
-        <img src="tattoo6.jpg">
-    </div>
+```
+<div class="slider">
+    <img src="tattoo1.jpg">
+    <img src="tattoo2.jpg">
+    <img src="tattoo3.jpg">
+    <img src="tattoo4.jpg">
+    <img src="tattoo5.jpg">
+    <img src="tattoo6.jpg">
+</div>
+```
+
 </section>
 
-<section class="contact">
-    <h2>Запис</h2>
+<!-- CONTACT -->
 
-    <p>
-        📞 <a href="tel:+380934734725">+380 93 473 47 25</a>
-    </p>
+<section class="contact" id="contact">
+    <h2>Контакти</h2>
 
-    <div class="socials">
-        <a href="https://instagram.com/vanotattoo" target="_blank">Instagram</a>
-        <a href="https://t.me/vanotattoo" target="_blank">Telegram</a>
-        <a href="https://wa.me/380934734725" target="_blank">WhatsApp</a>
-    </div>
+```
+<p>
+    📞 <a href="tel:+380934734725">+380 93 473 47 25</a>
+</p>
+
+<div class="socials">
+    <a href="https://instagram.com/yourname" target="_blank">Instagram</a>
+    <a href="https://t.me/yourname" target="_blank">Telegram</a>
+    <a href="https://wa.me/380934734725" target="_blank">WhatsApp</a>
+</div>
+```
+
 </section>
 
 </body>
